@@ -7,5 +7,5 @@ check_status() {
     echo success
   else
     echo failure
-    fi
+  fi
 }
