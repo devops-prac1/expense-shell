@@ -29,7 +29,7 @@ mkdir /app  &>>/tmp/expense.log
 echo $?
 
 echo Download app content
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
+curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip &>>/tmp/expense.log
 echo $?
 
 echo extract app content
