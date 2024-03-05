@@ -1,6 +1,9 @@
-print_Task_Heading(){
+
+ LOG=/tmp/expense.log
+
+ print_Task_Heading(){
   echo $1
-  LOG=/home/ec2-user/expense-shell/TMP.log
+
   echo "########   $1 ################" &>>$LOG
 }
 check_status() {
