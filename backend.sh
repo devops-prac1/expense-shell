@@ -1,5 +1,10 @@
+echo Disable default NodeJS Version Module
 dnf module disable nodejs -y  &>>/tmp/expense.log
+
+echo enable NodeJS  Module for V20
 dnf module enable nodejs:20 -y  &>>/tmp/expense.log
+
+echo Install NodeJS
 dnf install nodejs -y  &>>/tmp/expense.log
 
 
