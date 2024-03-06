@@ -1,6 +1,8 @@
 source common.sh
 
 mysql_root_password=$1
+app_dir=/app
+component=backend
 
 # if password is not provided then we will exit
 if [ -z "${mysql_root_password}" ]; then
@@ -34,23 +36,8 @@ check_status $?
 print_Task_Heading "copy backend service file"
 cp backend.service /etc/systemd/system/backend.service  &>>$LOG
 check_status $?
+App_preReq
 
-print_Task_Heading "clean the old content"
-rm -rf /app  &>>$LOG
-check_status $?
-
-print_Task_Heading "create App Directory"
-mkdir /app  &>>$LOG
-check_status $?
-
-print_Task_Heading "Download app content"
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip &>>$LOG
-check_status $?
-
-print_Task_Heading "extract app content"
-cd /app  &>>$LOG
-unzip /tmp/backend.zip &>>$LOG
-check_status $?
 
 print_Task_Heading  "Download NodeJS Dependencies"
 cd /app  &>>$LOG
