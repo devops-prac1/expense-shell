@@ -20,7 +20,7 @@ App_preReq()  {
   check_status $?
 
   print_Task_Heading "create App Directory"
-  mkdir {app_dir} &>>$LOG
+  mkdir ${app_dir} &>>$LOG
   check_status $?
 
   print_Task_Heading "Download app content"
