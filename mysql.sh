@@ -18,5 +18,8 @@ check_status $?
 
 
 print_Task_Heading "set up my sql password"
+echo 'show databases' |mysql -h 172.31.16.209  -uroot -pExpenseApp@1 &>>$LOG
+if [ $? -ne 0 ]; then
 mysql_secure_installation --set-root-pass  ${mysql_root_password} &>>$LOG
+fi
 check_status $?
