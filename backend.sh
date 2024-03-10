@@ -13,7 +13,7 @@ fi
 
 
 
- print_Task_Heading "Disable default NodeJS Version Module"
+print_Task_Heading "Disable default NodeJS Version Module"
 dnf module disable nodejs -y  &>>$LOG
 check_status $?
 
@@ -34,7 +34,7 @@ fi
 check_status $?
 
 print_Task_Heading "copy backend service file"
-cp backend.service /etc/systemd/system/backend.service  &>>$LOG
+cp b /etc/systemd/system/b  &>>$LOG
 check_status $?
 App_preReq
 
